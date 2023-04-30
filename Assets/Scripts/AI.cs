@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    public float speed = 1;
+    private float speed = Config.PlayerSpeed;
     private GameObject ball;
     
     void Start()

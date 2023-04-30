@@ -11,4 +11,9 @@ public class Ball : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity =
         	Vector2.right * startForce;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        // if(other.gameObject)
+    }
 }
