@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject display;
     public float startForce = 20.0f;
+    private float timer = 1000.0f;
 
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity =
+        transform.position = new Vector3(0, 0, 0);
+            GetComponent<Rigidbody2D>().velocity =
         	Vector2.right * startForce;
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // if(other.gameObject)
+        string msg = "";
+        
+        Debug.Log("Hit");
+        if(other.gameObject.name == "Left") msg = "AI Wins!";
+        else if(other.gameObject.name == "Right") msg = "Player Wins!";
+        
+        StartCoroutine(Restart(msg));
+    }
+
+    private IEnumerator Restart(string msg)
+    {
+        display.GetComponent<Message>().Display(msg);
+        yield return new WaitForSecondsRealtime(4);
+        display.GetComponent<Message>().Display("");
+        Start();
     }
 }
