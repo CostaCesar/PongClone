@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class Config
 {
-    public static float PlayerSpeed {get; set;} = 5.0f;
+    public static float PlayerSpeed {get; set;} = 6.0f;
 }
