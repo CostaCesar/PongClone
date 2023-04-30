@@ -7,7 +7,6 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private GameObject display;
     public float startForce = 20.0f;
-    private float timer = 1000.0f;
 
     void Start()
     {
