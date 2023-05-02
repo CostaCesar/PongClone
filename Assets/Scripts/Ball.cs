@@ -12,7 +12,7 @@ public class Ball : MonoBehaviour
     {
         transform.position = new Vector3(0, 0, 0);
             GetComponent<Rigidbody2D>().velocity =
-        	Vector2.right * startForce;
+        	new Vector2(startForce, startForce);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
